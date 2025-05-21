@@ -1,4 +1,4 @@
-﻿# User Manual for BEDE
+# User Manual for BEDE
 
 ---
 
@@ -445,5 +445,3 @@ The application implements comprehensive error handling:
    - Keep login credentials secure
    - Log out after sessions
    - Don't share account access
-#   B E D E - F o r e c a s t i n g  
- 

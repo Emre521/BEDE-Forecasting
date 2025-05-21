@@ -1,0 +1,648 @@
+/* Basic resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {  
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 80px; /* Prevent content from being hidden behind the fixed header */
+}
+
+/* Header Layout */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Height of the header */
+    background-color: #34495e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000; /* Keeps header on top */
+}
+
+/* Styling for the right section of the header */
+.header-right {
+    display: flex;
+    align-items: center; /* Vertically center the username and button */
+    gap: 10px; /* Space between the username and the profile button */
+}
+
+/* Styling for the Username */
+.username {
+    font-size: 16px;
+    color: white; /* Adjust the color as needed */
+    font-weight: bold;
+}
+
+/* Styling for the Profile button */
+#profile-btn {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#profile-btn:hover {
+    background-color: #2c3e50;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for the Logo */
+.logo {
+    display: flex; /* Ensures logo and name are next to each other */
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-img {
+    max-width: 40px; /* Make sure the logo is responsive */
+    max-height: 40px; /* Make sure the logo is responsive */
+    object-fit: contain; /* Ensure the image fits inside the logo box without distortion */
+    margin-right: 10px; /* Space between logo image and name */
+}
+
+.logo-name {
+    font-size: 24px; /* Font size for the site name */
+    color: black;
+}
+
+
+
+/* If buttons are inside a list, remove bullet points */
+.top-btn ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+/* Ensure links within buttons have no underline */
+.top-btn a {
+    text-decoration: none;
+}
+
+/* Styling for the "Contact" and "About" buttons */
+.top-btn {
+    background-color: transparent; /* Transparent background */
+    color: #bdc3c7; /* Light gray color */
+    padding: 12px 20px; /* Increased padding to make buttons bigger */
+    border-radius: 8px; /* Rounded corners */
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 18px; /* Increased font size */
+    font-weight: normal;
+    border: none; /* Remove border */
+    outline: none; /* Remove outline on focus */
+}
+
+/* Remove outline on focus */
+.top-btn:focus {
+    outline: none;
+}
+
+/* Hover effect for "Contact" and "About" buttons */
+.top-btn:hover {
+    background-color: #2c3e50; /* Subtle hover effect */
+    color: white; /* Text color change on hover */
+    transform: scale(1.05); /* Slight scaling effect */
+}
+
+/* Styling for the Profile button */
+#profile-btn {
+    background-color: #2c3e50;
+    color: white;
+    padding: 0; /* Remove padding to maintain the button size */
+    border-radius: 50%; /* Make the button fully round */
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 50px; /* Adjust button size */
+    height: 50px; /* Ensure button is square and circular */
+    display: flex;
+    justify-content: center; /* Center the image inside the button */
+    align-items: center; /* Vertically center the image inside the button */
+}
+
+
+/* Styling for the Profile image inside the button */
+.profile-img {
+    width: 28px; /* Ensure the image takes up full width of the button */
+    height: 28px; /* Ensure the image takes up full height of the button */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 50%; /* Ensure the image is circular */
+    max-width: 30px; /* Restrict max width to prevent the image from growing too large */
+    max-height: 30px; /* Restrict max height to prevent the image from growing too large */
+}
+
+/* Hover effect for the Profile button */
+#profile-btn:hover {
+    background-color: #2c3e50; /* Change background color on hover */
+    transform: scale(1.05); /* Slightly increase the size when hovered */
+}
+
+/* Sidebar Layout */
+.sidebar {
+    position: fixed;
+    top: 80px; /* Push sidebar below the header */
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 80px); /* Full viewport height minus the header height */
+    background-color: #34495e;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 999; /* Keeps sidebar below the header */
+}
+
+/* Sidebar Section and Category Styling */
+.sidebar-section {
+    margin-bottom: 20px;
+}
+
+.sidebar-category-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #bdc3c7;
+    margin-bottom: 10px;
+}
+
+/* Sidebar List */
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+/* Sidebar Button Styling */
+.sidebar-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    text-align: left;
+    background-color: #273849;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none; /* Removes the underline */
+    display: block; /* Makes the button span the full width */
+}
+
+/* Sidebar Button Hover Effect */
+.sidebar-button:hover {
+    background-color: #2c3e50;
+    transform: translateX(10px);
+    text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* Main Content */
+.main-container {
+    display: flex;
+    flex: 1;
+    margin-top: 0px; /* Adds space for fixed header */
+    margin-left: 250px; /* Adds space for fixed sidebar */
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px); /* Full height minus header and sidebar */
+    padding: 20px;
+}
+
+.content {
+    background-color: #f5f5f5;
+    padding: 20px;
+    width: 80%;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000; /* Keeps the footer on top */
+}
+
+footer:hover {
+    background-color: #444; /* Slight change in footer background on hover */
+    transform: scale(1.02); /* Subtle scale effect */
+}
+
+/* Form styling */
+.upload-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.file-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.file-input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.upload-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    background-color: #34495e;
+    font-weight: bold;
+}
+
+.upload-btn:hover {
+    background-color: #2c3e50;
+}
+
+.success-message {
+    color: green;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.error-message {
+    color: red;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Settings Container Styling */
+.settings-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+}
+
+/* Settings Header */
+.settings-header h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Settings Sections */
+.settings-section {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Theme Toggle Section */
+.toggle-btn-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+}
+
+.toggle-btn-container h3 {
+    font-size: 20px;
+    color: #333;
+    margin-right: 20px;
+}
+
+/* Theme Toggle Button */
+.toggle-btn {
+    padding: 10px 20px;
+    background-color: #34495e;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.toggle-btn:hover {
+    background-color: #2c3e50;
+}
+
+/* Apply transition to html and body */
+html, body {
+    transition: background-color 0.5s ease, color 0.5s ease; /* Ensure smooth transitions */
+}
+
+/* Light Mode */
+body.light-mode {
+    background-color: #d6d7e3; /* Light background */
+    color: black; /* Dark text */
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #2c3e50; /* Dark background */
+    color: white; /* White text */
+}
+
+/* Main containers and content transition */
+body.light-mode .content, 
+body.light-mode .main-container{
+    background-color: #d6d7e3; /* Light background */
+    color: black; /* Dark text */
+}
+
+body.light-mode .settings-container,
+body.light-mode .settings-section,
+body.light-mode .upload-container,
+body.light-mode .hero-section,
+body.light-mode .contact-us-section{
+    background-color: #f7f7fd; /* Light background */
+    color: black; /* Dark text */
+}
+
+
+body.dark-mode .content, 
+body.dark-mode .main-container{
+    background-color: #2c3e50; /* Dark background */
+    color: white; /* White text */
+}
+
+body.dark-mode .settings-container,
+body.dark-mode .settings-section,
+body.dark-mode .upload-container,
+body.dark-mode .hero-section,
+body.dark-mode .contact-us-section {
+    background-color: #273849; /* Dark background */
+    color: white; /* White text */
+}
+
+body.dark-mode .file-input{
+    background-color: #34495e; /* Dark background */
+    color: white; /* White text */
+}
+
+body.light-mode .file-input{
+    background-color: #e7eaeb; /* Light background */
+    color: black; /* Dark text */
+}
+
+body.dark-mode .file-label{
+    color: white;
+}
+
+body.light-mode .file-label{
+    color: black;
+}
+
+/* Add transition for all sections */
+.content, .main-container, .settings-container, .settings-section {
+    transition: background-color 0.3s ease, color 0.3s ease; /* Apply smooth transition */
+}
+
+/* Headers */
+body.light-mode h1, body.light-mode h2, body.light-mode h4, body.light-mode h5, body.light-mode h6 {
+    color: black; /* Dark text */
+}
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
+    color: white; /* White text */
+}
+
+/* Ensure all links and buttons in the dark mode also change color */
+a, button {
+    transition: color 0.5s ease;
+}
+
+/* Home Page Styling */
+.hero-section {
+    background-color: #34495e;
+    color: white;
+    padding: 0px 20px;
+    text-align: center;
+    position: relative; /* Ensures we can position the logo within the hero */
+    height: 100vh; /* Makes the hero section take up full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Hero Logo Container Styling */
+.hero-logo-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the logo */
+    align-items: center; /* Vertically center the logo */
+    margin-bottom: 20px; /* Add spacing below the logo */
+}
+
+.hero-logo-img {
+    max-width: 200px; /* Adjust the logo size to be a bit smaller */
+    height: auto;
+    object-fit: contain; /* Ensure the logo maintains aspect ratio */
+}
+
+.hero-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.benefits-section {
+    padding: 50px;
+}
+
+.benefits-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.benefit-item img {
+    width: 150px;
+    margin-right: 20px;
+}
+
+.benefit-text h3 {
+    margin-bottom: 10px;
+}
+
+/* Contact Us Section Styling */
+.contact-us-section {
+    background-color: #f4f4f4;
+    padding: 20px 10px; /* Reduced padding for a more compact look */
+    text-align: center;
+    margin-top: 30px; /* Reduced margin to make it closer to the hero section */
+    max-width: 600px; /* Limiting the width of the contact section */
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Contact Us Section Title */
+.contact-us-section h2 {
+    font-size: 1.5em; /* Reduced font size for a smaller heading */
+    color: #34495e;
+    margin-bottom: 10px; /* Reduced margin for a tighter section */
+}
+
+/* Contact Us Section Text */
+.contact-us-section p {
+    font-size: 1em; /* Reduced font size */
+    color: #7f8c8d;
+    margin-bottom: 15px; /* Reduced margin */
+}
+
+/* Contact Email List Styling */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* No margin for the list */
+}
+
+.contact-list li {
+    font-size: 1em; /* Reduced font size */
+    margin-bottom: 8px; /* Reduced space between list items */
+}
+
+.contact-list a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-list a:hover {
+    color: #2980b9; /* Hover color for the email links */
+}
+
+body.dark-mode .contact-list a{
+    color: #b5bfc0;
+}
+
+body.light-mode .contact-list a{
+    color: #2c3e50;
+}
+
+body.dark-mode .contact-list a:hover{
+    color: #7f8c8d;
+}
+
+body.light-mode .contact-list a:hover{
+    color: #2980b9;
+}
+
+/*profile section*/
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.profile-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px;
+    text-align: center;
+    width: 90%;
+}
+
+h1 {
+    font-size: 24px;
+    color: #34495e; /* Heading color */
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    text-align: left;
+    line-height: 1.8;
+}
+
+.profile-info p {
+    font-size: 16px;
+    color: #34495e; /* Text color */
+}
+
+.profile-info strong {
+    color: #00a597; /* Highlighted color */
+}
+
+.profile-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Hover effect */
+}
+
+body.dark-mode .profile-card{
+    background-color: #273849;
+}
+body.light-mode .profile-card{
+    background-color: #f7f7fd;
+}
+
+body.dark-mode .profile-info p{
+    color: white;
+}
+body.light-mode .profile-info p{
+    color: black
+}
+
+
